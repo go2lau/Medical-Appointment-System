@@ -1,22 +1,29 @@
-#ifndef APPOINTMENT_H
-#define APPOINTMENT_H
-#include <string>
+#include "appointmentManager.h"
 using namespace std;
+#include <vector>
 
-class Appointment{
+AppointmentManager::AppointmentManager(){
 
-    protected:
-        string date;
-        string time;
-        int doctorID;
-        int patientID;
-        int appointmentID;
-    public:
-        Appointment();
-        Appointment(string, string, int, int);
-        void changeAppointment(string, string); //cambiar fecha y hora
-        void changeAppointment(string); //cambiar sólo hora
-        virtual string getDetails()=0;
-        virtual string getDetails(bool)=0; //para vista de doctor
-};
-#endif
+    appointments={};
+
+}
+
+AppointmentManager::AppointmentManager(vector<Appointment*>appointments_){
+
+    //using pointers to assign appointments_ to appointments
+}
+
+Appointment* AppointmentManager::getAppointment(int id){
+
+    //returning appointment based on its id
+}
+
+vector <Appointment*> AppointmentManager:: getAppointments(){
+
+    return appointments;
+}
+
+void AppointmentManager::addAppointment(Appointment* appointment){
+
+    //using pointers to add an appointment to the vector which contains them
+}
