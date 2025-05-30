@@ -12,10 +12,10 @@ class Surgery: public Appointment{
         float duration;
     public:
         Surgery();
-        Surgery(string, string, int, int, string, float);
+        Surgery(string, string, int, int, int, int, string, float);
         void setRoom(int);
-        string getDetails(); 
-        string getDetails(bool);
+        string getDetails() override; 
+        string getDetails(bool) override;
 };
 
 #endif
