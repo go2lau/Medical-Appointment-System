@@ -7,7 +7,7 @@ class TherapySession{
         string sessionType;
     public:
         TherapySession();
-        TherapySession(string, string,int, int, string);
+        TherapySession(string, string,int, int, int, string);
         string getDetails();
         string getDetails(bool); //para vista de doctor
         
