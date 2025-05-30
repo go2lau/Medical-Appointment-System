@@ -6,9 +6,9 @@ class GeneralCheckup: public Appointment{
         string basicVitals;
     public:
         GeneralCheckup();
-        GeneralCheckup(string, string, int, int, string);
-        string getDetails();
-        string getDetails(bool);
+        GeneralCheckup(string, string, int, int, int, string);
+        string getDetails() override;
+        string getDetails(bool) override;
 
 
 };
