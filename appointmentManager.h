@@ -12,7 +12,7 @@ class AppointmentManager{
         AppointmentManager();
         AppointmentManager(vector<Appointment*>);
         void addAppointment(Appointment*);
-        vector<Appointment*> getAppountments();
+        vector<Appointment*> getAppointments();
         Appointment* getAppointment(int); //obtiene appointment dado su ID
 
 };
