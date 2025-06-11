@@ -23,12 +23,21 @@ TherapySession::TherapySession(string date_, string time_, int doctorID_, int pa
 
 }
 
-string TherapySession::getDetails(){
+string TherapySession::getDetails(){//gets details from patient perspective
 
-    //details from patient perspective
+    string msg;
+    msg="These are the details of your therapy session \n Date: "+date+"\n"+"Time: "+time+"\nID of your doctor: "+to_string(doctorID)+ "\n"+"Appointment ID: "+to_string(appointmentID)+"\n"+"Session Type: "+sessionType+"\n";
+    return msg;
 }
 
-string TherapySession::getDetails(bool doctor){
+string TherapySession::getDetails(bool doctor){//now from doctor perspective
 
-    //details from doctor perspective if true
+    string msg;
+    if (doctor){
+        msg="These are the details of your therapy session \n Date: "+date+"\n"+"Time: "+time+"\nID of your patient: "+to_string(patientID)+ "\n"+"Appointment ID: "+to_string(appointmentID)+"\n"+"Session Type: "+sessionType+"\n";
+        return msg;
+    }
+    msg="These are the details of your therapy session \n Date: "+date+"\n"+"Time: "+time+"\nID of your doctor: "+to_string(doctorID)+ "\n"+"Appointment ID: "+to_string(appointmentID)+"\n"+"\nSession Type: "+sessionType+"\n";
+    return msg;
+
 }
