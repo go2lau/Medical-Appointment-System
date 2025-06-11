@@ -3,7 +3,7 @@
 #include "appointment.h"
 class GeneralCheckup: public Appointment{
     private:
-        string basicVitals;
+        string primaryConcern;
     public:
         GeneralCheckup();
         GeneralCheckup(string, string, int, int, int, string);
