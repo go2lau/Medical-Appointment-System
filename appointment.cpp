@@ -19,14 +19,24 @@ Appointment::Appointment(string date_, string time_, int doctorID_, int patientI
 
 }
 
-void Appointment::changeAppointment(string date_, string time_){
 
-    date=date_;
-    time=time_;
+string Appointment::getDate(){
+    return date;
 }
 
-void Appointment::changeAppointment(string time_){
+string Appointment::getTime(){
+    return time;
+}
 
-    time=time_;
+int Appointment::getDID(){
+    return doctorID;
+}
+
+int Appointment::getPID(){
+    return patientID;
+}
+
+int Appointment::getAID(){
+    return appointmentID;
 }
 
