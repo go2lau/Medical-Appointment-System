@@ -30,12 +30,20 @@ void Surgery::setRoom(int room){
     operatingRoom=room;
 }
 
-string Surgery::getDetails(){
+string Surgery::getDetails(){//gets details from patient perspective
 
-    //desde la perspectiva del paciente
+    string msg;
+    msg= "These are the details of your surgery \n Date: "+date+"\n"+"Time: "+time+"\nID of your doctor: "+to_string(doctorID)+ "\n"+"Appointment ID: "+to_string(appointmentID)+"\n"+"Operating Room: "+to_string(operatingRoom)+"\nType of surgery: "+typeOfSurgery+"\nDuration (hours): "+to_string(duration)+"\n";
+    return msg; 
 }
 
-string Surgery::getDetails(bool doctor){
-    //desde la perspectiva del doctor
+string Surgery::getDetails(bool doctor){//now from doctor perspective
+    string msg;
+    if (doctor){
+        msg= "These are the details of your surgery \n Date: "+date+"\n"+"Time: "+time+"\nID of your patient: "+to_string(patientID)+ "\n"+"Appointment ID: "+to_string(appointmentID)+"\n"+"Operating Room: "+to_string(operatingRoom)+"\nType of surgery: "+typeOfSurgery+"\nDuration (hours): "+to_string(duration)+"\n";
+        return msg; 
+    }
+    msg= "These are the details of your surgery \n Date: "+date+"\n"+"Time: "+time+"\nID of your doctor "+to_string(doctorID)+ "\n"+"Appointment ID: "+to_string(appointmentID)+"\n"+"Operating Room: "+to_string(operatingRoom)+"\nType of surgery: "+typeOfSurgery+"\nDuration (hours): "+to_string(duration)+"\n";
+    return msg; 
 
 }
