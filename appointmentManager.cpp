@@ -8,22 +8,29 @@ AppointmentManager::AppointmentManager(){
 
 }
 
-AppointmentManager::AppointmentManager(vector<Appointment*>appointments_){
 
-    //using pointers to assign appointments_ to appointments
-}
 
-Appointment* AppointmentManager::getAppointment(int id){
-
+string AppointmentManager::getAppointment(int id){
+    for (auto*a : appointments){
+        if (a->getAID()==id){
+            return a->getDetails(true);
+        }
+    }
+    return "An appointment with such an ID does not exist.";
     //returning appointment based on its id
 }
 
-vector <Appointment*> AppointmentManager:: getAppointments(){
-
-    return appointments;
+string AppointmentManager:: getAppointments(){
+    string aux="";
+    for (auto*a : appointments){
+            aux+=a->getDetails(true);
+        }
+    return aux;
 }
 
-void AppointmentManager::addAppointment(Appointment* appointment){
 
-    //using pointers to add an appointment to the vector which contains them
+AppointmentManager& AppointmentManager::operator +(Appointment* appointment){
+    appointments.push_back(appointment);
+    return *this;
+  //using pointers and operator overloading to add an appointment to the vector which contains them
 }
