@@ -10,10 +10,9 @@ class AppointmentManager{
         vector<Appointment*> appointments;
     public: 
         AppointmentManager();
-        AppointmentManager(vector<Appointment*>);
-        void addAppointment(Appointment*);
-        vector<Appointment*> getAppointments();
-        Appointment* getAppointment(int); //obtiene appointment dado su ID
+        AppointmentManager& operator +(Appointment* appointment);
+        string getAppointments();
+        string getAppointment(int); //gets appointment details based on its id
 
 };
 
